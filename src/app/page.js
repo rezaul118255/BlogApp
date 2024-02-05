@@ -1,9 +1,19 @@
-import Image from "next/image";
+import CardList from "@/components/cardList/CardList";
+import CategoryList from "@/components/categoryList/CategoryList";
+import Featured from "@/components/featured/Featured";
+import Menu from "@/components/menu/Menu";
+import styles from './homepage.css'
+
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl text-blue-700">this is main page</h1>
+    <div className={styles}>
+      <Featured />
+      <CategoryList />
+      <div className={styles.content}>
+        <CardList />
+        <Menu />
+      </div>
     </div>
   );
 }
