@@ -1,25 +1,34 @@
 import React from 'react';
 import styles from "./navbar.module.css";
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
+import ThemeToggle from '../themeToggle/ThemeToggle';
+import AuthLinks from '../authLinks/AuthLinks';
 
 const Navbar = () => {
     return (
         <div className={styles.container}>
-            <div className={styles.logo}>
+            <div className={styles.logo} >
                 <h3>Achintya Blog</h3>
             </div>
             <div className={styles.links}>
+
                 <Link href="/" className={styles.link}>Homepage</Link>
                 <Link href="/" className={styles.link}>Contact</Link>
                 <Link href="/" className={styles.link}>About</Link>
+                <div className='mt-1 px-2'>
+                    <ThemeToggle />
+                </div>
+
 
             </div>
-            <div className={styles.social}>
-                <Image src="/facebook.png" alt="facebook" width={24} height={24} />
+            <div className={styles.authLinks}>
+                {/* <Image src="/facebook.png" alt="facebook" width={24} height={24} />
                 <Image src="/instagram.png" alt="instagram" width={24} height={24} />
                 <Image src="/tiktok.png" alt="tiktok" width={24} height={24} />
-                <Image src="/youtube.png" alt="youtube" width={24} height={24} />
+                <Image src="/youtube.png" alt="youtube" width={24} height={24} /> */}
+
+                <AuthLinks />
 
             </div>
         </div>
