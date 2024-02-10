@@ -46,6 +46,7 @@ const Comments = () => {
                         </div>
                     </div>
                     <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, magni.</p>
+                    {/* <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, magni.</p> */}
                 </div>
 
             </div>
