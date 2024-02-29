@@ -8,33 +8,29 @@ import Image2 from "../../../public/github2.png";
 import Image3 from "../../../public/facebook.png";
 import { UserAuth } from '@/context/AuthContext';
 // import { UserAuth } from '@/context/AuthContext';
+
 // import tokenJWT from '../utils/tokenJWT';
 
 const LoginPage2 = () => {
-    // const { googleSignIn} = UserAuth();
+    const { user, googleSignIn, logOut } = UserAuth();
     const search = useSearchParams();
     const from = search.get("redirectUrl") || "/";
     const { replace } = useRouter()
+    // console.log(user)
+
+
+
     const handleSignIn = async () => {
         try {
-            const { user } = await googleSignIn();
-            // await tokenJWT({ email: user.email })
-            replace(from)
+            await googleSignIn()
         } catch (error) {
+            console.log(error)
         }
     };
-    // const handelFbSignIn = async () => {
-    //     try {
-    //         await FbSignIn();
-    //     } catch (error) {
-    //     }
-    // };
-    // const handleGitSignIn = async () => {
-    //     try {
-    //         await gitHubSignIn();
-    //     } catch (error) {
-    //     }
-    // };
+
+
+
+
     return (
         <div>
             <form className="card-body" >
@@ -42,7 +38,7 @@ const LoginPage2 = () => {
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                    <input type="email" name="email" required placeholder="email" className="input input-bordered" />
                 </div>
                 {/* <div className="form-control">
                     <label className="label">

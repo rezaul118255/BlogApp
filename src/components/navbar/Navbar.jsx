@@ -8,6 +8,11 @@ import logo from "../../../public/logo_gif_anim4_small-d5d61787.gif"
 import Image from 'next/image';
 
 const Navbar = () => {
+
+
+
+
+
     return (
         <div className={styles.container}>
             <div className={styles.logo} >
@@ -27,6 +32,7 @@ const Navbar = () => {
 
 
             </div>
+            <AuthLinks ></AuthLinks>
 
         </div>
     );
